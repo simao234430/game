@@ -39,7 +39,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
 find_package(Boost REQUIRED)
-find_package(Protobuf)
+find_package(Protobuf REQUIRED)
 find_package(CURL)
 find_path(CARES_INCLUDE_DIR ares.h)
 find_library(CARES_LIBRARY NAMES cares)
@@ -50,7 +50,7 @@ find_library(BOOSTTEST_LIBRARY NAMES boost_unit_test_framework)
 include_directories(${Boost_INCLUDE_DIRS})
 
 include_directories(${PROJECT_SOURCE_DIR})
-
+message(STATUS "PROJECT_SOURCE_DIR = " ${PROJECT_SOURCE_DIR})
 string(TOUPPER ${CMAKE_BUILD_TYPE} BUILD_TYPE)
 message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS} " " ${CMAKE_CXX_FLAGS_${BUILD_TYPE}})
 

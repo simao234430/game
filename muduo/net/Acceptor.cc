@@ -61,7 +61,7 @@ void Acceptor::handleRead()
   if (connfd >= 0)
   {
     // string hostport = peerAddr.toIpPort();
-    LOG_TRACE << "Accepts of " << hostport;
+    //LOG_TRACE << "Accepts of " << hostport;
     if (newConnectionCallback_)
     {
       newConnectionCallback_(connfd, peerAddr);
